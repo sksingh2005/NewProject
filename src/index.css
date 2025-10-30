@@ -1,1 +1,15 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-darkGray: rgb(33, 37, 41);
+  --color-primary-500: #0066CC;
+  --color-secondary-500: #2C7D8C;
+  --color-accent-500: #FF9500;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
