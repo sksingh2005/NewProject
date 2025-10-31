@@ -2,6 +2,7 @@ import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Home from './Home';
 import MainLayout from '../components/layout/MainLayout';
+import Transactions from './Transactions/Transactions';
 
 
 
@@ -24,6 +25,7 @@ const AppRoutes: React.FC = () => {
       >
         <Route index element={<Navigate to="/home" replace />} />
         <Route path="home" element={<Home />} />
+        <Route path="transactions" element={<Transactions />} />
         
       </Route>
     </Routes>
