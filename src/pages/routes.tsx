@@ -1,6 +1,7 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Home from './Home';
+import MainLayout from '../components/layout/MainLayout';
 
 
 
@@ -18,9 +19,11 @@ const AppRoutes: React.FC = () => {
       <Route
         path="/"
         element={
-            <Home/>
+            <MainLayout/>
         }
       >
+        <Route index element={<Navigate to="/home" replace />} />
+        <Route path="home" element={<Home />} />
         
       </Route>
     </Routes>
