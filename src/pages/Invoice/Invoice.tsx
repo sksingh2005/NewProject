@@ -23,7 +23,7 @@ const paymentRequestSchema = z.object({
   paymentType: z.enum(["instant", "scheduled"]),
   dueDate: z.date().optional(),
   amount: z.string().min(1, "Amount is required"),
-  currency: z.string().default("INR"),
+  currency: z.string(),
   description: z.string().optional(),
 })
 

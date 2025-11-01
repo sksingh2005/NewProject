@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { useTheme } from '../context/ThemeContext';
-import { Sun, Moon, WandSparkles, MessageCircle } from 'lucide-react';
+import  { useState } from 'react';
+
+import { WandSparkles, MessageCircle } from 'lucide-react';
 import { TableDemo } from '@/components/HomeTable';
 import HomeDashboard from '@/components/HomeCards';
 import { Button } from '@/components/ui/button'; // ✅ shadcn button

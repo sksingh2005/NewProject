@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
 import { cn } from "@/lib/utils"
 import { Check } from "lucide-react"
-import { contactFormSchema } from "@/lib/schema"
+import { paymentFormSchema } from "@/lib/schema"
 
 // Define the form state type
 interface ContactFormState {
@@ -39,7 +39,7 @@ export function ContactForm({ className }: React.ComponentProps<typeof Card>) {
 
     try {
       // ✅ Validate input
-      const data = contactFormSchema.parse(values)
+      const data = paymentFormSchema.parse(values)
 
       // Simulate network delay
       await new Promise((resolve) => setTimeout(resolve, 1000))
@@ -59,7 +59,7 @@ export function ContactForm({ className }: React.ComponentProps<typeof Card>) {
         const errors = Object.fromEntries(
           Object.entries(error.flatten().fieldErrors).map(([key, value]) => [
             key,
-            value?.join(", "),
+            (value as string[])?.join(", "),
           ])
         )
 

@@ -1,7 +1,7 @@
 import Dropdown from '@/components/Dropdown';
 import { SearchBar } from '@/components/Searchbar';
 import { Plus, SlidersHorizontal, Settings } from 'lucide-react';
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import ProcessTable, { Payment as ProcessPayment } from './Process';
 import QueueTable from './Queue';
 import { useNavigate } from 'react-router-dom';
@@ -40,7 +40,7 @@ function Transactions() {
     { id: "133", payeeName: "Global Solutions", status: PaymentStatus.PENDING, initiator: "Jane Smith", dueDate: "10 May 2025", amount: "$750,000" },
   ];
 
-  const currentData = activeTab === 'inProgress' ? inProgressData : inQueueData;
+  // const currentData = activeTab === 'inProgress' ? inProgressData : inQueueData;
 
   const handleMenuAction = (action: string, paymentId: string) => {
     console.log(`${action} for payment ${paymentId}`);
