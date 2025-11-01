@@ -79,21 +79,34 @@ function Transactions() {
           {activeTab === 'inQueue' && <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gray-900 dark:bg-white" />}
         </button>
       </div>
+      
+      {activeTab === 'inQueue' && (
+        <div className="mb-4 flex items-start gap-3 p-4 bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg">
+          <span className="text-yellow-600 dark:text-yellow-500 text-xl">⚠️</span>
+          <p className="text-sm text-gray-700 dark:text-gray-300 pt-1">
+            There are certain entries with incomplete information. please complete them before submitting.
+          </p>
+        </div>
+      )}
 
       {/* Search + Filter */}
       <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 mb-4">
         <div className="flex min-w-0">
           <SearchBar placeholder="Search" value={search} onChange={(e: any) => setSearch(e.target.value)} />
         </div>
-
-        <button
-          type="button"
-          className="flex items-center gap-2 px-4 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
-        >
-          <SlidersHorizontal size={16} />
-          <span className="font-semibold">More Filters</span>
-        </button>
+        
+        <div className='pb-4'>
+          <button
+            type="button"
+            className="flex items-center gap-2 px-4 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors "
+          >
+            <SlidersHorizontal size={16} />
+            <span className="font-semibold">More Filters</span>
+          </button>
+        </div>
       </div>
+
+      
 
       {/* Table container */}
       <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden">

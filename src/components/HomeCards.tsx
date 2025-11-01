@@ -2,11 +2,12 @@ import { useState, useRef, useEffect } from 'react';
 import { Plus } from 'lucide-react';
 import { Card, StatsCard, BalanceCard } from './Card';
 import Dropdown from './Dropdown';
+import { useNavigate } from 'react-router-dom';
 
 export default function HomeDashboard() {
     const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
     const dropdownRef = useRef<HTMLDivElement | null>(null);
-
+    const navigate = useNavigate();
     useEffect(() => {
         function handleClickOutside(event: MouseEvent): void {
             if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
@@ -51,7 +52,9 @@ export default function HomeDashboard() {
                 options={[
                   {
                     label: "Add an Invoice",
-                    onClick: () => console.log("Add an Invoice clicked"),
+                    onClick: () => {
+                      navigate('/invoice');
+                    },
                   },
                   {
                     label: "Upload Bulk Invoice",

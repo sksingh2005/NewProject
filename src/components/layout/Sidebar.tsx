@@ -79,7 +79,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isMobile, isOpen, onClose, onToggle }
       
       {/* Sidebar */}
       <aside 
-        className={`fixed lg:relative top-0 h-screen bg-white dark:bg-[#0c1427] shadow-lg z-30 transition-all duration-300 ease-in-out overflow-x-hidden
+        className={`fixed lg:relative top-0 h-screen bg-[#0c1427] dark:bg-[#0c1427] shadow-lg z-30 transition-all duration-300 ease-in-out overflow-x-hidden
                     ${isMobile 
                       ? `${isOpen ? 'translate-x-0' : '-translate-x-full'} w-64` 
                       : isOpen 
