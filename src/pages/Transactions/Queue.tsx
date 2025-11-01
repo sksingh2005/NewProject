@@ -1,4 +1,3 @@
-import React from "react";
 import { EllipsisVerticalIcon } from "lucide-react";
 import type { Payment as ProcessPayment } from "./Process";
 import {

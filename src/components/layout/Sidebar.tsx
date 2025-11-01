@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import { Home, Truck, Search, PlusSquare, Users, Settings, FileText, HelpCircle, Menu, X, ChevronDown, ChevronRight, Wallet } from 'lucide-react';
+import { Home, Search, PlusSquare, Users, Settings, FileText, HelpCircle, Menu, X, ChevronDown, ChevronRight, Wallet } from 'lucide-react';
 import { Route } from '../../types/index';
 import { useAuth } from '../../utils/auth';
 

@@ -1,11 +1,11 @@
 import { useState, useRef, useEffect } from 'react';
 import { Plus } from 'lucide-react';
-import { Card, StatsCard, BalanceCard } from './Card';
+import {  StatsCard, BalanceCard } from './Card';
 import Dropdown from './Dropdown';
 import { useNavigate } from 'react-router-dom';
 
 export default function HomeDashboard() {
-    const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
+    const [, setIsDropdownOpen] = useState<boolean>(false);
     const dropdownRef = useRef<HTMLDivElement | null>(null);
     const navigate = useNavigate();
     useEffect(() => {

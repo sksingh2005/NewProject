@@ -1,6 +1,6 @@
+import { paymentFormSchema } from "@/lib/schema";
 import React, { useState } from "react";
 import { z } from "zod";
-import { contactFormSchema } from "@/lib/schema";
 
 // Define the return type similar to your original server action
 interface ContactFormState {
@@ -24,7 +24,7 @@ export default function ContactForm() {
 
     try {
       // Validate form fields with Zod schema
-      const data = contactFormSchema.parse(defaultValues);
+      const data = paymentFormSchema.parse(defaultValues);
 
       // Simulate a slow API call
       await new Promise((resolve) => setTimeout(resolve, 1000));
@@ -45,7 +45,7 @@ export default function ContactForm() {
         const errors = Object.fromEntries(
           Object.entries(error.flatten().fieldErrors).map(([key, value]) => [
             key,
-            (value || []).join(", "),
+            (Array.isArray(value) ? value : []).join(", "),
           ])
         );
 
