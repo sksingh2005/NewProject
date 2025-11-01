@@ -4,6 +4,7 @@ import { Plus, SlidersHorizontal, Settings } from 'lucide-react';
 import React, { useState } from 'react';
 import ProcessTable, { Payment as ProcessPayment } from './Process';
 import QueueTable from './Queue';
+import { useNavigate } from 'react-router-dom';
 
 // reuse same enum/styles if needed here or keep strings
 enum PaymentStatus {
@@ -19,6 +20,7 @@ function Transactions() {
   const [currentPage, setCurrentPage] = useState(1);
   const totalItems = 135;
   const itemsPerPage = 10;
+  const navigate = useNavigate();
 
   // Sample data for In Progress
   const inProgressData: ProcessPayment[] = [
@@ -55,7 +57,9 @@ function Transactions() {
           buttonLabel="New Payment"
           buttonIcon={Plus}
           options={[
-            { label: "Add an Invoice", onClick: () => console.log("Add an Invoice clicked") },
+            { label: "Add an Invoice", onClick: () => {
+              navigate('/invoice');
+            } },
             { label: "Upload Bulk Invoice", onClick: () => console.log("Upload Bulk Invoice clicked") },
             { label: "Download Template", onClick: () => console.log("Download Template clicked") },
           ]}

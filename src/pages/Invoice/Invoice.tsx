@@ -80,7 +80,7 @@ export default function InvoiceForm() {
         {/* Header */}
         <div className="mb-2">
           <Button variant="ghost" size="sm" className="mb-2 -ml-2 text-slate-600 hover:text-slate-900 hover:bg-slate-100" onClick={()=>{
-            navigate('/');
+            navigate('/transactions');
           }}>
             <ArrowLeft className="h-4 w-4 mr-2" />
             Back

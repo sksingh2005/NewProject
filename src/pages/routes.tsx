@@ -4,7 +4,9 @@ import Home from './Home';
 import MainLayout from '../components/layout/MainLayout';
 import Transactions from './Transactions/Transactions';
 import InvoiceForm from './Invoice/Invoice';
-
+import Bank from './Bank Reconcillation/page';
+import Reports from './Reports/page';
+import Settings from './Settings/page';
 
 
 
@@ -28,6 +30,9 @@ const AppRoutes: React.FC = () => {
         <Route path="home" element={<Home />} />
         <Route path="transactions" element={<Transactions />} />
         <Route path='invoice' element={<InvoiceForm />} />
+        <Route path='reconcillation' element={<Bank />} />
+        <Route path='reports' element={<Reports />} />
+        <Route path='settings' element={<Settings />} />
       </Route>
     </Routes>
   );
